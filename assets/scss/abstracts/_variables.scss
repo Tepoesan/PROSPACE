@@ -1,0 +1,58 @@
+// ========================================
+// VARIABLES GLOBALES
+// ========================================
+
+// Rôle : centraliser les valeurs réutilisées dans les fichiers SCSS.
+// Cela permet de modifier facilement l'apparence générale du site.
+
+
+// --- Couleurs ---
+// Les couleurs pourront être ajustées lors de la finalisation
+// afin de respecter la maquette et les exigences de contraste WCAG.
+
+// Couleur sombre utilisée notamment pour le header et le footer.
+$couleur-principale: #111827;
+
+// Couleur d'accent utilisée pour les éléments mis en avant.
+$couleur-accent: #38a9e0;
+
+// Couleurs utilisées pour les textes, fonds et bordures.
+$couleur-blanc: #ffffff;
+$couleur-texte: #1f2937;
+$couleur-texte-secondaire: #6b7280;
+$couleur-bordure: #e5e7eb;
+$couleur-fond-clair: #f8fafc;
+
+
+// --- Typographie ---
+
+// Police principale utilisée sur l'ensemble du site.
+$police-principale: Arial, sans-serif;
+
+
+// --- Dimensions ---
+
+// Limite la largeur du contenu sur les grands écrans.
+$largeur-contenu: 1200px;
+
+
+// --- Espacements ---
+
+// Valeurs communes permettant de garder des espacements cohérents.
+$espacement-petit: 0.5rem;
+$espacement-moyen: 1rem;
+$espacement-grand: 2rem;
+
+
+// --- Arrondis ---
+
+// Rayons utilisés notamment pour les boutons, cartes et champs.
+$rayon-petit: 0.375rem;
+$rayon-moyen: 0.75rem;
+
+
+// --- Responsive ---
+
+// Points de rupture utilisés pour adapter l'affichage aux écrans plus larges.
+$breakpoint-tablette: 768px;
+$breakpoint-desktop: 1024px;

@@ -1,0 +1,528 @@
+<!-- TO DO => Pour l'instant je ne te remets pas le footer dans ce bloc.
+ On réutilisera exactement le footer commun de l'accueil quand on fera la mise en page,
+ plutôt que de rendre ce pavé encore plus monstrueux. -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Modifiée dynamiquement par espace.js selon l'espace affiché. -->
+    <meta
+        name="description"
+        content="Découvrez cet espace de travail professionnel avec ProSpace Solutions."
+        id="meta-description"
+    >
+
+    <title>Espace de travail | ProSpace Solutions</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <script src="assets/js/favoris.js" defer></script>
+
+    <!-- JavaScript spécifique à la fiche espace. -->
+    <script src="assets/js/espace.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ========================================
+         EN-TÊTE
+    ========================================= -->
+
+    <header class="site-header">
+
+        <nav
+            class="navigation"
+            aria-label="Navigation principale"
+        >
+
+                <!-- Logo et nom de l'entreprise permettant de revenir à l'accueil. -->
+                <a
+                    class="navigation__logo"
+                    href="index.html"
+                    aria-label="ProSpace Solutions - Accueil"
+                >
+                    <img
+                        src="assets/logo/logoprospace.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                    <span class="navigation__marque">
+                        ProSpace <strong>Solutions</strong>
+                    </span>
+                </a>
+
+            <ul class="navigation__liens">
+
+                <li>
+                    <a
+                        class="navigation__lien"
+                        href="index.html"
+                    >
+                        Accueil
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="navigation__lien"
+                        href="mes-espaces.html"
+                    >
+                        Mes Espaces
+
+                        <span
+                            class="navigation__compteur"
+                            id="compteur-favoris"
+                            aria-label="0 espace sauvegardé"
+                        >
+                            0
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="navigation__lien"
+                        href="contact.html"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         CONTENU PRINCIPAL
+    ========================================= -->
+
+    <main>
+
+        <!-- État affiché pendant le chargement. -->
+        <p
+            class="fiche-espace__chargement"
+            id="chargement"
+            role="status"
+            aria-live="polite"
+        >
+            Chargement de l'espace...
+        </p>
+
+
+        <!-- Message affiché si l'espace n'existe pas. -->
+        <p
+            class="fiche-espace__erreur"
+            id="erreur-espace"
+            role="alert"
+            hidden
+        >
+            Impossible de trouver cet espace.
+        </p>
+
+
+        <!--
+            Le contenu est masqué jusqu'à ce que
+            les données de l'espace soient chargées.
+        -->
+        <article
+            class="fiche-espace"
+            id="fiche-espace"
+            hidden
+        >
+
+            <!-- Fil d'Ariane -->
+            <nav
+                class="fil-ariane"
+                aria-label="Fil d'Ariane"
+            >
+                <a href="index.html">Accueil</a>
+
+                <span aria-hidden="true">›</span>
+
+                <span id="ariane-ville"></span>
+
+                <span aria-hidden="true">›</span>
+
+                <span
+                    id="ariane-espace"
+                    aria-current="page"
+                ></span>
+            </nav>
+
+
+            <!-- Présentation de l'espace -->
+            <header class="fiche-espace__entete">
+
+                <div>
+                    <h1
+                        class="fiche-espace__titre"
+                        id="espace-nom"
+                    ></h1>
+
+                    <p
+                        class="fiche-espace__adresse"
+                        id="espace-adresse"
+                    ></p>
+                </div>
+
+                <p
+                    class="fiche-espace__note"
+                    id="espace-note"
+                ></p>
+
+            </header>
+
+
+            <!-- Galerie -->
+            <section
+                class="fiche-espace__galerie"
+                aria-label="Galerie de l'espace"
+                id="espace-galerie"
+            >
+                <!-- Images générées par JavaScript -->
+            </section>
+
+
+            <!-- Contenu + tarifs -->
+            <div class="fiche-espace__colonnes">
+
+                <div class="fiche-espace__informations">
+
+                   <div class="fiche-espace__informations">
+
+            <!-- ========================================
+                DESCRIPTION
+            ========================================= -->
+
+            <section
+                class="fiche-espace__description"
+                aria-labelledby="titre-description"
+            >
+
+                <h2 id="titre-description">
+                    À propos de cet espace
+                </h2>
+
+                <p id="espace-description"></p>
+
+            </section>
+
+
+            <!-- ========================================
+                ÉQUIPEMENTS
+            ========================================= -->
+
+            <section
+                class="fiche-espace__section-equipements"
+                aria-labelledby="titre-equipements"
+            >
+
+                <h2 id="titre-equipements">
+                    Équipements inclus
+                </h2>
+
+                <ul
+                    class="fiche-espace__equipements"
+                    id="espace-equipements"
+                >
+                    <!-- Générés par JavaScript -->
+                </ul>
+
+            </section>
+
+
+            <!-- ========================================
+                CAPACITÉ ET CONFIGURATION
+            ========================================= -->
+
+            <section
+                class="fiche-espace__capacite"
+                aria-labelledby="titre-capacite"
+            >
+
+                <h2 id="titre-capacite">
+                    Capacité &amp; Configuration
+                </h2>
+
+                <div class="fiche-espace__capacite-contenu">
+
+                    <img
+                        src="assets/icons/duo.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                    <div>
+                        <p
+                            class="fiche-espace__capacite-nombre"
+                            id="espace-capacite"
+                        ></p>
+
+                        <p
+                            class="fiche-espace__configuration"
+                            id="espace-configuration"
+                        ></p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+                </div>
+
+
+                <!-- Tarifs -->
+                <aside
+                    class="fiche-espace__reservation"
+                    aria-labelledby="titre-tarifs"
+                >
+
+                    <h2 id="titre-tarifs">
+                        Tarifs
+                    </h2>
+
+
+                    <!-- Tableau sémantique pour l'accessibilité -->
+                    <table class="fiche-espace__tarifs">
+
+                        <thead class="sr-only">
+                            <tr>
+                                <th scope="col">
+                                    Durée
+                                </th>
+
+                                <th scope="col">
+                                    Prix
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <th scope="row">
+                                    À l'heure
+                                </th>
+
+                                <td id="tarif-heure"></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    Demi-journée (4h)
+                                </th>
+
+                                <td id="tarif-demi-journee"></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    Journée complète
+                                </th>
+
+                                <td id="tarif-journee"></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- Favoris : fonctionnalité ajoutée ensuite -->
+                    <button
+                        class="fiche-espace__favori"
+                        id="bouton-favori"
+                        type="button"
+                    >
+                        Ajouter aux favoris
+                    </button>
+
+
+                    <!-- L'espace sera ajouté à l'URL de contact en JS. -->
+                    <a
+                        class="fiche-espace__contact"
+                        id="lien-contact"
+                        href="contact.html"
+                    >
+                        Contacter l'équipe
+                    </a>
+
+                    <p class="fiche-espace__reponse">
+                        Réponse garantie sous 2h ouvrées.
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </article>
+
+    </main>
+      <!-- Pied de page commun aux différentes pages du site. -->
+    <footer class="site-footer">
+
+        <div class="site-footer__contenu">
+
+            <!-- Présentation de ProSpace Solutions. -->
+            <div class="site-footer__presentation">
+
+                <a
+                    class="site-footer__logo"
+                    href="index.html"
+                    aria-label="ProSpace Solutions - Accueil"
+                >
+                    <img
+                        src="assets/logo/logoprospace.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                    <span>
+                        ProSpace <strong>Solutions</strong>
+                    </span>
+                </a>
+
+                <p class="site-footer__description">
+                    Location d'espaces professionnels en France pour les entreprises
+                    et indépendants exigeants.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="site-footer__contact"
+                >
+                    Nous contacter
+                </a>
+
+            </div>
+
+
+            <!-- Liens vers les espaces par destination. -->
+            <nav
+                class="site-footer__colonne"
+                aria-label="Destinations"
+            >
+
+                <h2 class="site-footer__titre">
+                    Destinations
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li>
+                        <a href="index.html?ville=Paris">
+                            Espaces à Paris
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html?ville=Lyon">
+                            Espaces à Lyon
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html?ville=Bordeaux">
+                            Espaces à Bordeaux
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html?ville=Nantes">
+                            Espaces à Nantes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html?ville=Marseille">
+                            Espaces à Marseille
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+
+
+            <!-- Liens vers les différents types de services. -->
+            <nav
+                class="site-footer__colonne"
+                aria-label="Services"
+            >
+
+                <h2 class="site-footer__titre">
+                    Services
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li><a href="index.html">Salles de réunion</a></li>
+                    <li><a href="index.html">Espaces de coworking</a></li>
+                    <li><a href="index.html">Salles de formation</a></li>
+                    <li><a href="index.html">Bureaux privatifs</a></li>
+                    <li><a href="index.html">Studios visio</a></li>
+                    <li><a href="index.html">Espaces événementiels</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- Liens légaux et informations d'accessibilité. -->
+            <nav
+                class="site-footer__colonne"
+                aria-label="Informations légales"
+            >
+
+                <h2 class="site-footer__titre">
+                    Légal & accès
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li><a href="informations.html">Mentions légales</a></li>
+                    <li><a href="informations.html">CGU &amp; CGV</a></li>
+                    <li><a href="informations.html">Politique de confidentialité</a></li>
+                    <li><a href="informations.html">Gestion des cookies</a></li>
+                    <li><a href="informations.html">Déclaration d'accessibilité</a></li>
+                    <li><a href="informations.html">Sitemap</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+        <!-- Informations complémentaires situées en bas du footer. -->
+        <div class="site-footer__bas">
+
+            <div class="site-footer__bas-contenu">
+
+                <p>
+                    © 2025 ProSpace Solutions SAS — Tous droits réservés
+                </p>
+
+                <p>
+                    Conformité RGAA 4.1 · Accessibilité :
+                    <a href="informations.html">partiellement conforme</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

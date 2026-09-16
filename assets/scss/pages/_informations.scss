@@ -1,0 +1,65 @@
+// ==========================================
+// PAGE INFORMATIONS
+// ==========================================
+
+// Rôle : afficher une page informative simple pour les contenus
+// présents dans la maquette mais hors du périmètre du projet.
+
+@use "../abstracts/variables" as *;
+
+.page-informations {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $espacement-grand;
+    background-color: $couleur-fond-clair;
+}
+
+.informations {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+
+    &__contenu {
+        padding: 3rem 2rem;
+        background-color: $couleur-blanc;
+        border: 1px solid $couleur-bordure;
+        border-radius: $rayon-moyen;
+        box-shadow: 0 8px 30px rgba(17, 24, 39, 0.08);
+    }
+
+    &__sur-titre {
+        margin-bottom: $espacement-petit;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $couleur-accent;
+    }
+
+    h1 {
+        margin-bottom: $espacement-moyen;
+        color: $couleur-principale;
+    }
+
+    p {
+        max-width: 550px;
+        margin: 0 auto $espacement-grand;
+        color: $couleur-texte-secondaire;
+        line-height: 1.6;
+    }
+
+    &__retour {
+        display: inline-block;
+        padding: 0.875rem 1.5rem;
+        color: $couleur-blanc;
+        background-color: $couleur-principale;
+        border-radius: $rayon-petit;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $couleur-accent;
+        }
+    }
+}

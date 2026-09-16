@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ========================================
+// STYLES DE BASE
+// ========================================
+
+// Rôle : définir les styles généraux communs à toutes les pages du site.
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: $police-principale;
+    color: $couleur-texte;
+    background-color: $couleur-blanc;
+    line-height: 1.5;
+}
+
+// Les éléments interactifs utilisent le curseur adapté.
+button,
+select,
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+// Applique un focus visible aux principaux éléments interactifs.
+a,
+button,
+input,
+select,
+textarea {
+    @include focus-visible;
+}
+
+// Masque visuellement un élément tout en le conservant
+// accessible aux technologies d'assistance.
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

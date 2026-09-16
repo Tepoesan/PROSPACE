@@ -1,0 +1,47 @@
+// ========================================
+// MIXINS RÉUTILISABLES
+// ========================================
+
+@use "variables" as *;
+
+// Rôle : regrouper les styles réutilisés à plusieurs endroits du site.
+// Les mixins permettent d'éviter de répéter les mêmes règles SCSS.
+
+
+// --- Mise en page ---
+
+// Limite la largeur du contenu et le centre horizontalement.
+@mixin conteneur {
+    width: 100%;
+    max-width: $largeur-contenu;
+    margin: 0 auto;
+    padding-inline: $espacement-moyen;
+}
+
+
+// --- Accessibilité ---
+
+// Rend le focus clavier clairement visible sur les éléments interactifs.
+@mixin focus-visible {
+    &:focus-visible {
+        outline: 3px solid $couleur-accent;
+        outline-offset: 3px;
+    }
+}
+
+
+// --- Responsive ---
+
+// Applique les styles contenus dans la mixin à partir du format tablette.
+@mixin tablette {
+    @media (min-width: $breakpoint-tablette) {
+        @content;
+    }
+}
+
+// Applique les styles contenus dans la mixin à partir du format desktop.
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}

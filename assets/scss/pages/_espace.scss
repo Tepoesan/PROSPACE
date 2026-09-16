@@ -1,0 +1,330 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+// ========================================
+// FICHE DÉTAILLÉE D'UN ESPACE
+// ========================================
+
+.fiche-espace {
+    @include conteneur;
+
+    padding-block: $espacement-grand;
+
+
+    // ========================================
+    // FIL D'ARIANE
+    // ========================================
+
+    .fil-ariane {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: $espacement-petit;
+        margin-bottom: $espacement-grand;
+
+        color: $couleur-texte-secondaire;
+        font-size: 0.8rem;
+
+        a {
+            color: $couleur-accent;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+    // ========================================
+    // EN-TÊTE DE LA FICHE
+    // ========================================
+
+    &__entete {
+        display: flex;
+        flex-direction: column;
+        gap: $espacement-moyen;
+        margin-bottom: $espacement-grand;
+
+        @include tablette {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+
+    &__titre {
+        margin-bottom: $espacement-petit;
+
+        color: $couleur-texte;
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+
+
+    &__adresse {
+        color: $couleur-texte-secondaire;
+        font-size: 0.9rem;
+    }
+
+
+    &__note {
+        flex-shrink: 0;
+
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+
+
+    // ========================================
+    // GALERIE
+    // ========================================
+
+    &__galerie {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $espacement-petit;
+
+        margin-bottom: $espacement-grand;
+        overflow: hidden;
+
+        border-radius: $rayon-moyen;
+
+        @include tablette {
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: repeat(2, 180px);
+        }
+    }
+
+
+    &__image {
+        width: 100%;
+        height: 220px;
+
+        object-fit: cover;
+
+        @include tablette {
+            height: 100%;
+        }
+
+
+        // La première image occupe la grande partie gauche.
+        &--principale {
+            @include tablette {
+                grid-row: 1 / 3;
+            }
+        }
+    }
+
+
+    // ========================================
+    // CONTENU PRINCIPAL
+    // ========================================
+
+    &__colonnes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $espacement-grand;
+
+        @include desktop {
+            grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+            align-items: start;
+        }
+    }
+
+
+    &__informations {
+        display: flex;
+        flex-direction: column;
+        gap: $espacement-grand;
+
+        section {
+            padding-bottom: $espacement-grand;
+            border-bottom: 1px solid $couleur-bordure;
+        }
+
+        h2 {
+            margin-bottom: $espacement-moyen;
+
+            color: $couleur-texte;
+            font-size: 1.25rem;
+        }
+
+        p {
+            color: $couleur-texte-secondaire;
+            line-height: 1.7;
+        }
+    }
+
+
+    // ========================================
+    // ÉQUIPEMENTS
+    // ========================================
+
+    &__equipements {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $espacement-petit;
+
+        @include tablette {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        li {
+            padding: 0.75rem;
+
+            border-radius: $rayon-petit;
+            background-color: $couleur-fond-clair;
+
+            color: $couleur-texte;
+            font-size: 0.85rem;
+        }
+
+    }
+
+
+    // ========================================
+    // BLOC TARIFS / RÉSERVATION
+    // ========================================
+
+    &__reservation {
+        padding: $espacement-grand;
+
+        border: 1px solid $couleur-bordure;
+        border-radius: $rayon-moyen;
+
+        background-color: $couleur-blanc;
+        color: $couleur-texte;
+
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+        @include desktop {
+            position: sticky;
+            top: $espacement-grand;
+        }
+
+        h2 {
+            margin-bottom: $espacement-grand;
+
+            color: $couleur-texte;
+            font-size: 1.4rem;
+        }
+    }
+
+
+    // ========================================
+    // TABLEAU DES TARIFS
+    // ========================================
+
+    &__tarifs {
+        width: 100%;
+        margin-bottom: $espacement-grand;
+
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding-block: $espacement-moyen;
+            border-bottom: 1px solid $couleur-bordure;
+        }
+
+        th {
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        td {
+            text-align: right;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+    }
+
+
+    // ========================================
+    // FAVORIS
+    // ========================================
+
+        &__favori {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $espacement-petit;
+
+        width: 100%;
+        margin-bottom: $espacement-moyen;
+        padding: 0.8rem $espacement-moyen;
+
+        border: 1px solid $couleur-accent;
+        border-radius: $rayon-petit;
+
+        background-color: transparent;
+        color: $couleur-texte;
+
+        font-weight: 600;
+        cursor: pointer;
+
+        img {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        &:hover {
+            background-color: $couleur-fond-clair;
+        }
+
+        &:focus-visible {
+            @include focus-visible;
+        }
+    }
+
+
+    // ========================================
+    // CONTACT
+    // ========================================
+
+    &__contact {
+        display: block;
+        width: 100%;
+        padding: 0.8rem $espacement-moyen;
+
+        border-radius: $rayon-petit;
+
+        background-color: $couleur-accent;
+        color: $couleur-principale;
+
+        text-align: center;
+        font-weight: 700;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+
+    &__reponse {
+        margin-top: $espacement-moyen;
+
+        color: $couleur-texte-secondaire;
+        font-size: 0.75rem;
+        text-align: center;
+    }
+}
+
+
+// ========================================
+// ÉTATS DE LA FICHE
+// ========================================
+
+.fiche-espace__chargement,
+.fiche-espace__erreur {
+    @include conteneur;
+
+    padding-block: $espacement-grand;
+
+    color: $couleur-texte-secondaire;
+    text-align: center;
+}

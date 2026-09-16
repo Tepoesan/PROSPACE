@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Adapte l'affichage aux différentes tailles d'écran. -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Description de la page utilisée notamment par les moteurs de recherche. -->
+    <meta
+        name="description"
+        content="Trouvez et réservez un espace de travail professionnel partout en France avec ProSpace Solutions."
+    >
+
+    <!-- Titre spécifique à la page d'accueil. -->
+    <title>
+        Location d'espaces de travail en France | ProSpace Solutions
+    </title>
+
+    <!-- Feuille de style générée à partir des fichiers SCSS. -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- En-tête commun aux différentes pages du site. -->
+    <header class="site-header">
+
+        <!-- Navigation principale accessible du site. -->
+        <nav class="navigation" aria-label="Navigation principale">
+
+           <!-- Logo et nom de l'entreprise permettant de revenir à l'accueil. -->
+            <a
+                class="navigation__logo"
+                href="index.html"
+                aria-label="ProSpace Solutions - Accueil"
+            >
+                <img
+                    src="assets/logo/logoprospace.svg"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+                <span class="navigation__marque">
+                    ProSpace <strong>Solutions</strong>
+                </span>
+            </a>
+
+            <!-- Liens vers les principales pages du site. -->
+            <ul class="navigation__liens">
+                <li>
+                    <!-- aria-current indique la page actuellement consultée. -->
+                    <a
+                        class="navigation__lien navigation__lien--actif"
+                        href="index.html"
+                        aria-current="page"
+                    >
+                        Accueil
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="navigation__lien"
+                        href="mes-espaces.html"
+                    >
+                        Mes Espaces
+
+                        <!-- Compteur qui sera mis à jour avec les favoris enregistrés. -->
+                        <span
+                            class="navigation__compteur"
+                            id="compteur-favoris"
+                            aria-label="2 espaces sauvegardés"
+                        >
+                            2
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="navigation__lien"
+                        href="contact.html"
+                    >
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+        <!-- Contenu principal de la page d'accueil. -->
+    <main>
+
+        <!-- Présentation principale de ProSpace Solutions. -->
+        <section class="hero">
+            <div class="hero__contenu">
+
+                <!-- Petit libellé situé au-dessus du titre principal. -->
+                <p class="hero__badge">
+                    Location B2B en France
+                </p>
+
+                <!-- Titre principal de la page : un seul h1. -->
+                <h1 class="hero__titre">
+                    Trouvez votre espace de travail idéal
+                    <span>en France</span>
+                </h1>
+
+                <p class="hero__description">
+                    Salles de réunion, bureaux privatifs et espaces premium
+                    disponibles à la demande dans les grandes villes françaises.
+                </p>
+
+                <!-- Principaux avantages du service. -->
+                <ul class="hero__avantages">
+                    <li>
+                        <img
+                            src="assets/icons/checktransparent.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                        Réservation instantanée
+                    </li>
+
+                    <li>
+                        <img
+                            src="assets/icons/checktransparent.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                        Annulation flexible
+                    </li>
+
+                    <li>
+                        <img
+                            src="assets/icons/checktransparent.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                        Support dédié
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- Zone de recherche et de filtrage des espaces. -->
+        <section class="recherche" aria-label="Recherche d'espaces">
+            <form class="recherche__formulaire" id="formulaire-recherche">
+
+            
+              <!-- Libellé accompagné de l'icône de filtre issue de la maquette. -->
+                <span class="recherche__libelle">
+                    <img
+                        src="assets/icons/filter.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Filtrer
+                </span>
+
+                <select id="filtre-ville" name="ville" aria-label="Filtrer les espaces par ville">
+                    <option value="">Toutes les villes</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Lyon">Lyon</option>
+                    <option value="Bordeaux">Bordeaux</option>
+                    <option value="Nantes">Nantes</option>
+                    <option value="Marseille">Marseille</option>
+                </select>
+
+                <!-- Filtre par capacité. -->
+                <label class="sr-only" for="filtre-capacite">
+                    Filtrer par capacité
+                </label>
+
+                <select id="filtre-capacite" name="capacite" aria-label="Filtrer les espaces par capacité">
+                    <option value="">Toutes capacités</option>
+                    <option value="5">Jusqu'à 5 personnes</option>
+                    <option value="10">Jusqu'à 10 personnes</option>
+                    <option value="20">Jusqu'à 20 personnes</option>
+                    <option value="50">Jusqu'à 50 personnes</option>
+                </select>
+
+                <!-- Filtres par équipement. -->
+                <fieldset class="recherche__equipements">
+                    <legend class="sr-only">
+                        Équipements
+                    </legend>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="equipement"
+                            value="Fibre"
+                        >
+                        WiFi Fibre
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="equipement"
+                            value="PMR"
+                        >
+                        Accès PMR
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="equipement"
+                            value="4K"
+                        >
+                        Écran 4K
+                    </label>
+                </fieldset>
+
+            </form>
+        </section>
+
+        <!-- Liste des espaces correspondant aux critères de recherche. -->
+        <section class="resultats" aria-labelledby="titre-resultats">
+
+            <div class="resultats__entete">
+                <!-- Le nombre sera mis à jour automatiquement en JavaScript. -->
+                <h2 class="resultats__titre" id="titre-resultats">
+                    <span id="nombre-resultats">6</span> espaces disponibles
+                </h2>
+            </div>
+
+            <!-- Indicateur affiché pendant le chargement des données JSON. -->
+            <div
+                class="resultats__chargement"
+                id="chargement"
+                role="status"
+                aria-live="polite"
+            >
+                Chargement des espaces...
+            </div>
+
+            <!-- Message affiché lorsqu'aucun espace ne correspond aux filtres. -->
+            <p
+                class="resultats__vide"
+                id="aucun-resultat"
+                role="status"
+                hidden
+            >
+                Aucun espace ne correspond à votre recherche.
+            </p>
+
+            <!-- Les cartes des espaces seront créées ici avec JavaScript. -->
+            <div
+                class="resultats__grille"
+                id="liste-espaces"
+            ></div>
+
+        </section>
+
+    </main>
+
+    <!-- Pied de page commun aux différentes pages du site. -->
+    <footer class="site-footer">
+
+        <div class="site-footer__contenu">
+
+            <!-- Présentation de ProSpace Solutions. -->
+            <div class="site-footer__presentation">
+
+                 <a
+                        class="site-footer__logo"
+                        href="index.html"
+                        aria-label="ProSpace Solutions - Accueil"
+                    >
+                    <img
+                        src="assets/logo/logoprospace.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                    <span>
+                        ProSpace <strong>Solutions</strong>
+                    </span>
+                </a>
+
+                <p class="site-footer__description">
+                    Location d'espaces professionnels en France pour les entreprises
+                    et indépendants exigeants.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="site-footer__contact"
+                >
+                    <img
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Nous contacter
+                </a>
+
+            </div>
+
+
+            <!-- Liens vers les espaces par destination. -->
+            <nav
+                class="site-footer__colonne"
+                aria-label="Destinations"
+            >
+
+                <h2 class="site-footer__titre">
+                    Destinations
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li>
+                        <a href="index.html?ville=Paris">
+                            Espaces à Paris
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html?ville=Lyon">
+                            Espaces à Lyon
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html?ville=Bordeaux">
+                            Espaces à Bordeaux
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html?ville=Nantes">
+                            Espaces à Nantes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html?ville=Marseille">
+                            Espaces à Marseille
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+
+
+            <!-- Liens vers les différents types de services. -->
+            <nav
+                class="site-footer__colonne"
+                aria-label="Services"
+            >
+
+                <h2 class="site-footer__titre">
+                    Services
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li><a href="index.html">Salles de réunion</a></li>
+                    <li><a href="index.html">Espaces de coworking</a></li>
+                    <li><a href="index.html">Salles de formation</a></li>
+                    <li><a href="index.html">Bureaux privatifs</a></li>
+                    <li><a href="index.html">Studios visio</a></li>
+                    <li><a href="index.html">Espaces événementiels</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- Liens légaux et informations d'accessibilité. -->
+            <nav
+                class="site-footer__colonne"
+                aria-label="Informations légales"
+            >
+
+                <h2 class="site-footer__titre">
+                    Légal & accès
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li><a href="informations.html">Mentions légales</a></li>
+                    <li><a href="informations.html">CGU &amp; CGV</a></li>
+                    <li><a href="informations.html">Politique de confidentialité</a></li>
+                    <li><a href="informations.html">Gestion des cookies</a></li>
+                    <li><a href="informations.html">Déclaration d'accessibilité</a></li>
+                    <li><a href="informations.html">Sitemap</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+        <!-- Informations complémentaires situées en bas du footer. -->
+        <div class="site-footer__bas">
+
+            <div class="site-footer__bas-contenu">
+
+                <p>
+                    © 2025 ProSpace Solutions SAS — Tous droits réservés
+                </p>
+
+                <p>
+                    Conformité RGAA 4.1 · Accessibilité :
+                    <a href="informations.html">partiellement conforme</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript spécifique à la page d'accueil. -->
+    <!--Le defer signifie que le navigateur peut charger le fichier JS sans bloquer la lecture du HTML, puis l'exécuter lorsque le document est prêt.-->
+    <script src="assets/js/favoris.js" defer></script>
+    <script src="assets/js/accueil.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+// ========================================
+// FICHIER PRINCIPAL SCSS
+// ========================================
+
+// Rôle : charger les différents fichiers SCSS du projet
+// avant leur compilation dans assets/css/style.css.
+// on va utiliser @use, pas l'ancien @import (obsolète )
+
+
+// Outils globaux.
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+
+// Styles de base.
+@use "base/reset";
+@use "base/base";
+
+
+// Composants réutilisables.
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+
+
+// Mise en page.
+@use "layout/header";
+@use "layout/footer";
+
+// Styles spécifiques aux pages.
+@use "pages/accueil";
+@use "pages/espace";
+@use "pages/mes-espaces";
+@use "pages/contact";
+@use "pages/informations";

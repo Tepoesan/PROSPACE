@@ -1,0 +1,441 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+// ========================================
+// CARTES DES ESPACES
+// ========================================
+
+// Rôle : afficher les espaces sous forme de cartes.
+// Les cartes sont créées dynamiquement par accueil.js.
+//
+// La carte contient :
+// - une image principale ;
+// - un bouton favori ;
+// - le nom et la localisation ;
+// - la note et les avis ;
+// - la capacité et les équipements ;
+// - le tarif horaire ;
+// - un lien vers la fiche détaillée.
+
+.carte-espace {
+
+    // Organisation verticale permettant d'aligner
+    // le prix et le bouton en bas de toutes les cartes.
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid $couleur-bordure;
+    border-radius: 1rem;
+
+    background-color: $couleur-blanc;
+
+    // Ombre légère inspirée de la maquette.
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+
+    // Déplacer légèrement la carte au survol.
+    &:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 8px 20px rgba(15, 23, 42, 0.12);
+
+        // Agrandir légèrement uniquement la photo.
+        .carte-espace__image {
+            transform: scale(1.05);
+        }
+    }
+
+
+    // ========================================
+    // IMAGE ET FAVORI
+    // ========================================
+
+    // Conteneur servant de repère au bouton favori
+    // placé au-dessus de la photo.
+    &__image-conteneur {
+        position: relative;
+
+        // Empêcher l'image agrandie au survol
+        // de dépasser de la carte.
+        overflow: hidden;
+    }
+
+
+    // Image principale de l'espace.
+    &__image {
+        display: block;
+
+        width: 100%;
+        height: 230px;
+
+        object-fit: cover;
+
+        // Permettre le zoom progressif au survol.
+        transition: transform 0.3s ease;
+    }
+
+
+    // Bouton permettant d'ajouter ou retirer
+    // l'espace des favoris.
+    &__favori {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
+
+        border: 0;
+        border-radius: 50%;
+
+        background: transparent;
+
+        cursor: pointer;
+
+
+        // Le SVG exporté depuis Figma contient déjà
+        // l'apparence du bouton et du cœur.
+        img {
+            display: block;
+
+            width: 40px;
+            height: 40px;
+        }
+
+
+        // Afficher clairement le focus
+        // lors d'une navigation au clavier.
+        &:focus-visible {
+            outline: 3px solid $couleur-accent;
+            outline-offset: 3px;
+        }
+    }
+
+
+    // ========================================
+    // CONTENU PRINCIPAL
+    // ========================================
+
+    // Conteneur de toutes les informations
+    // situées sous la photo.
+    &__contenu {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+
+        padding: 1.25rem;
+    }
+
+
+    // Contient à gauche le nom et la localisation,
+    // et à droite la note et les avis.
+    &__entete {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        gap: $espacement-moyen;
+
+        margin-bottom: $espacement-moyen;
+    }
+
+
+    // Nom de l'espace.
+    &__titre {
+        margin-bottom: 0.35rem;
+
+        color: $couleur-texte;
+
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+
+    // ========================================
+    // LOCALISATION
+    // ========================================
+
+    // Quartier ou ville accompagné de l'icône
+    // de localisation exportée depuis Figma.
+    &__localisation {
+        display: flex;
+        align-items: center;
+
+        gap: 0.3rem;
+
+        margin: 0;
+
+        color: $couleur-texte-secondaire;
+
+        font-size: 0.8rem;
+
+
+        // Icône de localisation.
+        img {
+            display: block;
+
+            width: 14px;
+            height: 14px;
+
+            flex-shrink: 0;
+        }
+    }
+
+
+    // ========================================
+    // NOTE ET AVIS
+    // ========================================
+
+    // Contient les cinq étoiles,
+    // la note numérique et le nombre d'avis.
+    &__note {
+        display: flex;
+        align-items: center;
+
+        gap: 0.25rem;
+
+        flex-shrink: 0;
+
+        margin: 0;
+
+        color: $couleur-texte;
+
+        font-size: 0.8rem;
+        font-weight: 700;
+
+
+        // Note numérique.
+        strong {
+            font-weight: 700;
+        }
+
+
+        // Nombre d'avis affiché plus discrètement.
+        span {
+            color: $couleur-texte-secondaire;
+
+            font-size: 0.7rem;
+            font-weight: 400;
+        }
+    }
+
+
+    // Groupe contenant les cinq étoiles
+    // jaunes visibles sur la maquette.
+    &__etoiles {
+        display: inline-flex;
+        align-items: center;
+
+        gap: 0.1rem;
+
+
+        // Chaque étoile est décorative :
+        // la note exacte reste accessible via aria-label.
+        img {
+            display: block;
+
+            width: 12px;
+            height: 12px;
+
+            flex-shrink: 0;
+        }
+    }
+
+
+    // ========================================
+    // CAPACITÉ ET ÉQUIPEMENTS
+    // ========================================
+
+    // Regrouper la capacité et les équipements
+    // sur une seule ligne comme sur la maquette.
+    //
+    // flex-wrap permet toutefois le retour à la ligne
+    // si l'espace devient trop étroit sur mobile.
+    &__caracteristiques {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 0.5rem;
+
+        margin-bottom: $espacement-moyen;
+    }
+
+
+    // Capacité maximale de l'espace.
+    &__capacite {
+        display: inline-flex;
+        align-items: center;
+
+        gap: 0.3rem;
+
+        margin: 0;
+
+        color: $couleur-texte-secondaire;
+
+        font-size: 0.8rem;
+
+        // Empêcher "12 pers." de se couper
+        // sur deux lignes.
+        white-space: nowrap;
+
+
+        // Icône représentant le nombre de personnes.
+        img {
+            display: block;
+
+            width: 16px;
+            height: 16px;
+
+            flex-shrink: 0;
+        }
+    }
+
+
+    // Liste des équipements principaux
+    // affichés sous forme de petits badges.
+    &__equipements {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 0.45rem;
+
+        margin: 0;
+        padding: 0;
+
+
+        // Badge individuel :
+        // Fibre, PMR ou 4K.
+        li {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 0.25rem;
+
+            padding: 0.3rem 0.6rem;
+
+            border-radius: 999px;
+
+            background-color: $couleur-fond-clair;
+            color: $couleur-texte-secondaire;
+
+            font-size: 0.7rem;
+            line-height: 1;
+
+            // Empêcher le contenu du badge
+            // de se couper sur plusieurs lignes.
+            white-space: nowrap;
+
+
+            // Icône correspondant à l'équipement.
+            img {
+                display: block;
+
+                width: 12px;
+                height: 12px;
+
+                flex-shrink: 0;
+            }
+        }
+    }
+
+
+    // ========================================
+    // PRIX ET BOUTON
+    // ========================================
+
+    // Zone située tout en bas de la carte.
+    &__bas {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: $espacement-moyen;
+
+        // Pousser cette zone vers le bas afin
+        // d'aligner toutes les cartes de la grille.
+        margin-top: auto;
+
+        padding-top: $espacement-moyen;
+
+        border-top: 1px solid $couleur-bordure;
+    }
+
+
+    // Tarif horaire.
+    &__prix {
+        display: flex;
+        align-items: baseline;
+
+        gap: 0.2rem;
+
+        margin: 0;
+
+
+        // Prix mis en avant en bleu.
+        strong {
+            color: $couleur-accent;
+
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+
+        // Mention "/ heure".
+        span {
+            color: $couleur-texte-secondaire;
+
+            font-size: 0.7rem;
+        }
+    }
+
+
+    // Lien permettant d'accéder
+    // à la fiche détaillée de l'espace.
+    &__lien {
+        padding: 0.65rem 1rem;
+
+        border-radius: 999px;
+
+        background-color: $couleur-accent;
+        color: $couleur-blanc;
+
+        font-size: 0.75rem;
+        font-weight: 600;
+
+        white-space: nowrap;
+
+        transition:
+            background-color 0.2s ease,
+            transform 0.2s ease;
+
+
+        // Modifier légèrement la couleur
+        // au passage de la souris.
+        &:hover {
+            background-color: $couleur-principale;
+        }
+
+
+        // Focus visible pour la navigation clavier.
+        &:focus-visible {
+            outline: 3px solid $couleur-accent;
+            outline-offset: 3px;
+        }
+    }
+}

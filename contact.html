@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contactez ProSpace Solutions pour une demande de devis ou un projet d'espace de travail professionnel."
+    >
+
+    <title>Contactez nos équipes | ProSpace Solutions</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ======================================== -->
+    <!-- HEADER -->
+    <!-- ======================================== -->
+
+    <header class="site-header">
+
+        <nav
+            class="navigation"
+            aria-label="Navigation principale"
+        >
+
+             <!-- Logo et nom de l'entreprise permettant de revenir à l'accueil. -->
+                <a
+                    class="navigation__logo"
+                    href="index.html"
+                    aria-label="ProSpace Solutions - Accueil"
+                >
+                    <img
+                        src="assets/logo/logoprospace.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                    <span class="navigation__marque">
+                        ProSpace <strong>Solutions</strong>
+                    </span>
+
+
+            <ul class="navigation__liens">
+
+                <li>
+                    <a
+                        href="index.html"
+                        class="navigation__lien"
+                    >
+                        Accueil
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="mes-espaces.html"
+                        class="navigation__lien"
+                    >
+                        Mes Espaces
+
+                        <span
+                            id="compteur-favoris"
+                            class="navigation__compteur"
+                        >
+                            0
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="navigation__lien navigation__lien--actif"
+                        aria-current="page"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ======================================== -->
+        <!-- HERO -->
+        <!-- ======================================== -->
+
+        <section class="contact-hero">
+
+            <p class="contact-hero__sur-titre">
+                Nous écrire
+            </p>
+
+            <h1>
+                Contactez <span>nos équipes</span>
+            </h1>
+
+            <p>
+                Une question, une demande de devis ou un projet à discuter ?
+                <br>
+                Notre équipe vous répond sous 2h ouvrées.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================== -->
+        <!-- CONTACT -->
+        <!-- ======================================== -->
+
+        <section
+            class="contact"
+            aria-labelledby="titre-formulaire"
+        >
+
+            <div class="contact__contenu">
+
+
+                <!-- ======================================== -->
+                <!-- FORMULAIRE -->
+                <!-- ======================================== -->
+
+                <div class="contact__formulaire">
+
+                    <div class="contact__formulaire-entete">
+
+                        <h2 id="titre-formulaire">
+                            Formulaire de contact
+                        </h2>
+
+                        <p>
+                            * Champs obligatoires
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        id="formulaire-contact"
+                        novalidate
+                    >
+
+                        <div class="contact__ligne">
+
+                            <!-- Nom complet -->
+                            <div class="champ">
+
+                                <label for="nom">
+                                    Nom complet *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nom"
+                                    name="nom"
+                                    autocomplete="name"
+                                    placeholder="Marie Dupont"
+                                    required
+                                    aria-describedby="erreur-nom"
+                                >
+
+                                <p
+                                    id="erreur-nom"
+                                    class="champ__erreur"
+                                    aria-live="polite"
+                                ></p>
+
+                            </div>
+
+
+                            <!-- Email professionnel -->
+                            <div class="champ">
+
+                                <label for="email">
+                                    Email professionnel *
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    placeholder="m.dupont@entreprise.fr"
+                                    required
+                                    aria-describedby="erreur-email"
+                                >
+
+                                <p
+                                    id="erreur-email"
+                                    class="champ__erreur"
+                                    aria-live="polite"
+                                ></p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact__ligne">
+
+                            <!-- Entreprise -->
+                            <div class="champ">
+
+                                <label for="entreprise">
+                                    Entreprise *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="entreprise"
+                                    name="entreprise"
+                                    autocomplete="organization"
+                                    placeholder="Acme SAS"
+                                    required
+                                    aria-describedby="erreur-entreprise"
+                                >
+
+                                <p
+                                    id="erreur-entreprise"
+                                    class="champ__erreur"
+                                    aria-live="polite"
+                                ></p>
+
+                            </div>
+
+
+                            <!-- Téléphone -->
+                            <div class="champ">
+
+                                <label for="telephone">
+                                    Téléphone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="telephone"
+                                    name="telephone"
+                                    autocomplete="tel"
+                                    placeholder="+33 6 12 34 56 78"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Sujet -->
+                        <div class="champ">
+
+                            <label for="sujet">
+                                Type de demande *
+                            </label>
+
+                            <select
+                                id="sujet"
+                                name="sujet"
+                                required
+                                aria-describedby="erreur-sujet"
+                            >
+
+                                <option value="">
+                                    Sélectionnez un type de demande…
+                                </option>
+
+                                <option value="devis">
+                                    Demande de devis
+                                </option>
+
+                                <option value="reservation">
+                                    Réservation d'un espace
+                                </option>
+
+                                <option value="information">
+                                    Demande d'information
+                                </option>
+
+                                <option value="entreprise">
+                                    Solution pour mon entreprise
+                                </option>
+
+                                <option value="autre">
+                                    Autre demande
+                                </option>
+
+                            </select>
+
+                            <p
+                                id="erreur-sujet"
+                                class="champ__erreur"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Espace concerné -->
+                        <div
+                            id="bloc-espace"
+                            class="champ"
+                            hidden
+                        >
+
+                            <label for="espace-concerne">
+                                Espace concerné
+                            </label>
+
+                            <input
+                                type="text"
+                                id="espace-concerne"
+                                name="espace"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <!-- Message -->
+                        <div class="champ">
+
+                            <label for="message">
+                                Message *
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Décrivez votre projet ou votre question…"
+                                required
+                                aria-describedby="erreur-message"
+                            ></textarea>
+
+                            <p
+                                id="erreur-message"
+                                class="champ__erreur"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Consentement -->
+                        <div class="champ champ--consentement">
+
+                            <input
+                                type="checkbox"
+                                id="consentement"
+                                name="consentement"
+                                required
+                                aria-describedby="erreur-consentement"
+                            >
+
+                            <label for="consentement">
+                                J'accepte que mes données personnelles soient
+                                traitées conformément à la
+                                <a href="informations.html">
+                                    politique de confidentialité
+                                </a>
+                                de ProSpace Solutions. *
+                            </label>
+
+                        </div>
+
+                        <p
+                            id="erreur-consentement"
+                            class="champ__erreur"
+                            aria-live="polite"
+                        ></p>
+
+
+                        <button
+                            type="submit"
+                            class="contact__envoyer"
+                        >
+                            Envoyer le message
+                        </button>
+
+
+                        <!-- Confirmation affichée sans rechargement. -->
+                        <p
+                            id="confirmation-contact"
+                            class="contact__confirmation"
+                            role="status"
+                            aria-live="polite"
+                            tabindex="-1"
+                            hidden
+                        ></p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- ======================================== -->
+                <!-- INFORMATIONS ENTREPRISE -->
+                <!-- ======================================== -->
+
+                <aside class="contact__aside">
+
+                    <div class="contact__informations">
+
+                        <h2>
+                            ProSpace Solutions
+                        </h2>
+
+                        <p class="contact__sous-titre">
+                            Informations entreprise
+                        </p>
+
+
+                        <dl>
+
+                            <div>
+                                <dt>Adresse</dt>
+                                <dd>
+                                    14 Avenue de Wagram
+                                    <br>
+                                    75008 Paris
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Téléphone</dt>
+                                <dd>
+                                    <a href="tel:+33142567890">
+                                        +33 1 42 56 78 90
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Email</dt>
+                                <dd>
+                                    <a href="mailto:contact@prospace-solutions.fr">
+                                        contact@prospace-solutions.fr
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Horaires</dt>
+                                <dd>
+                                    Lun - Ven : 9h00 - 18h00
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Présence</dt>
+                                <dd>
+                                    6 villes en France
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>SIRET</dt>
+                                <dd>
+                                    853 204 119 00024
+                                </dd>
+                            </div>
+
+                        </dl>
+
+                    </div>
+
+
+                    <div class="contact__reponse">
+
+                        <strong>
+                            Réponse rapide garantie
+                        </strong>
+
+                        <p>
+                            Notre équipe s'engage à vous répondre sous
+                            2 heures ouvrées. Pour les urgences, appelez le
+                            +33 1 42 56 78 90.
+                        </p>
+
+                    </div>
+
+
+                    <blockquote class="contact__temoignage">
+
+                        <p class="contact__note">
+                            ★★★★★ <strong>4.8 / 5</strong>
+                        </p>
+
+                        <p>
+                            « L'équipe ProSpace est réactive et à l'écoute.
+                            Notre réservation a été confirmée en moins d'une
+                            heure, parfait pour notre séminaire de dernière
+                            minute. »
+                        </p>
+
+                        <footer>
+                            — Charlotte M., DAF chez Nexeo Group
+                        </footer>
+
+                    </blockquote>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================== -->
+        <!-- ÉQUIPE -->
+        <!-- ======================================== -->
+
+        <section
+            class="equipe"
+            aria-labelledby="titre-equipe"
+        >
+
+            <p class="equipe__sur-titre">
+                L'équipe
+            </p>
+
+            <h2 id="titre-equipe">
+                Des experts à votre service
+            </h2>
+
+            <p class="equipe__introduction">
+                Une équipe de professionnels passionnés, disponibles pour vous
+                accompagner dans tous vos projets d'espaces de travail.
+            </p>
+
+
+<!-- ======================================== -->
+<!-- CARROUSEL DE L'ÉQUIPE -->
+<!-- ======================================== -->
+
+<div
+    class="equipe__zone-carrousel"
+    role="region"
+    aria-label="Présentation de l'équipe ProSpace Solutions"
+>
+
+    <!-- Liste des membres affichés dans le carrousel. -->
+    <div
+        id="carrousel-equipe"
+        class="equipe__carrousel"
+        aria-live="polite"
+        aria-atomic="true"
+        tabindex="0"
+    >
+
+        <article
+            class="membre-equipe"
+            data-membre
+        >
+            <img
+                src="assets/images/equipe-prospace-solutions-03.png"
+                alt="Portrait d'Alexandre Moreau"
+                loading="lazy"
+            >
+
+            <h3>Alexandre Moreau</h3>
+
+             <p>
+                <a
+                    class="membre-equipe__email"
+                    href="mailto:alexandre.moreau@prospace-solutions.fr"
+                    aria-label="Envoyer un e-mail à Alexandre Moreau, CEO et Co-fondateur"
+                >
+                    <img
+                        class="membre-equipe__icone-email"
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    CEO &amp; Co-fondateur
+                </a>
+            </p>
+        </article>
+
+        <!-- Sophie Leclerc -->
+        <article
+            class="membre-equipe"
+            data-membre
+        >
+            <img
+                src="assets/images/equipe-prospace-solutions-04.png"
+                alt="Portrait de Sophie Leclerc"
+                loading="lazy"
+            >
+
+            <h3>Sophie Leclerc</h3>
+
+            <p>
+                <a
+                    class="membre-equipe__email"
+                    href="mailto:sophie.leclerc@prospace-solutions.fr"
+                    aria-label="Envoyer un e-mail à Sophie Leclerc, Directrice Commerciale"
+                >
+                    <img
+                        class="membre-equipe__icone-email"
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Directrice Commerciale
+                </a>
+            </p>
+        </article>
+
+
+        <!-- Thomas Bergeron -->
+        <article
+            class="membre-equipe"
+            data-membre
+        >
+            <img
+                src="assets/images/equipe-prospace-solutions-05.png"
+                alt="Portrait de Thomas Bergeron"
+                loading="lazy"
+            >
+
+            <h3>Thomas Bergeron</h3>
+
+            <p>
+                <a
+                    class="membre-equipe__email"
+                    href="mailto:thomas.bergeron@prospace-solutions.fr"
+                    aria-label="Envoyer un e-mail à Thomas Bergeron, Responsable Partenariats"
+                >
+                    <img
+                        class="membre-equipe__icone-email"
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Responsable Partenariats
+                </a>
+            </p>
+        </article>
+
+
+        <!-- Marine Dubois -->
+        <article
+            class="membre-equipe"
+            data-membre
+        >
+            <img
+                src="assets/images/equipe-prospace-solutions-06.png"
+                alt="Portrait de Marine Dubois"
+                loading="lazy"
+            >
+
+            <h3>Marine Dubois</h3>
+
+            <p>
+                <a
+                    class="membre-equipe__email"
+                    href="mailto:marine.dubois@prospace-solutions.fr"
+                    aria-label="Envoyer un e-mail à Marine Dubois, Chargée de Clientèle Senior"
+                >
+                    <img
+                        class="membre-equipe__icone-email"
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Chargée de Clientèle Senior
+                </a>
+            </p>
+        </article>
+
+
+        <!-- Claire Martin -->
+        <article
+            class="membre-equipe"
+            data-membre
+        >
+            <img
+                src="assets/images/equipe-prospace-solutions-01.png"
+                alt="Portrait de Claire Martin"
+                loading="lazy"
+            >
+
+            <h3>Claire Martin</h3>
+
+            <p>
+                <a
+                    class="membre-equipe__email"
+                    href="mailto:claire.martin@prospace-solutions.fr"
+                    aria-label="Envoyer un e-mail à Claire Martin, Account Manager Paris"
+                >
+                    <img
+                        class="membre-equipe__icone-email"
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Account Manager Paris
+                </a>
+            </p>
+        </article>
+
+
+        <!-- Nathalie Bernard -->
+        <article
+            class="membre-equipe"
+            data-membre
+        >
+            <img
+                src="assets/images/equipe-prospace-solutions-02.png"
+                alt="Portrait de Nathalie Bernard"
+                loading="lazy"
+            >
+
+            <h3>Nathalie Bernard</h3>
+
+            <p>
+                <a
+                    class="membre-equipe__email"
+                    href="mailto:nathalie.bernard@prospace-solutions.fr"
+                    aria-label="Envoyer un e-mail à Nathalie Bernard, Responsable Espaces B2B"
+                >
+                    <img
+                        class="membre-equipe__icone-email"
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Responsable Espaces B2B
+                </a>
+            </p>
+        </article>
+
+
+        <!-- Élodie Laurent -->
+        <article
+            class="membre-equipe"
+            data-membre
+        >
+            <img
+                src="assets/images/equipe-prospace-solutions-07.png"
+                alt="Portrait d'Élodie Laurent"
+                loading="lazy"
+            >
+
+            <h3>Élodie Laurent</h3>
+
+            <p>
+                <a
+                    class="membre-equipe__email"
+                    href="mailto:elodie.laurent@prospace-solutions.fr"
+                    aria-label="Envoyer un e-mail à Élodie Laurent, Chargée de Clientèle"
+                >
+                    <img
+                        class="membre-equipe__icone-email"
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Chargée de Clientèle
+                </a>
+            </p>
+        </article>
+
+    </div>
+
+
+    <!-- Contrôles du carrousel placés sous les membres. -->
+    <div class="equipe__controles">
+
+        <button
+            type="button"
+            id="carrousel-precedent"
+            class="equipe__bouton"
+            aria-label="Afficher les membres précédents"
+        >
+            ←
+        </button>
+
+
+        <!-- Indicateur visuel de position. -->
+        <div
+            class="equipe__indicateurs"
+            aria-hidden="true"
+        >
+            <span class="equipe__indicateur equipe__indicateur--actif"></span>
+            <span class="equipe__indicateur"></span>
+            <span class="equipe__indicateur"></span>
+            <span class="equipe__indicateur"></span>
+            <span class="equipe__indicateur"></span>
+            <span class="equipe__indicateur"></span>
+            <span class="equipe__indicateur"></span>
+        </div>
+
+
+        <button
+            type="button"
+            id="carrousel-suivant"
+            class="equipe__bouton"
+            aria-label="Afficher les membres suivants"
+        >
+            →
+        </button>
+
+    </div>
+
+</div>
+
+
+<!--
+    Zone invisible visuellement utilisée pour annoncer
+    les changements du carrousel aux lecteurs d'écran.
+-->
+<p
+    id="annonce-carrousel"
+    class="sr-only"
+    aria-live="polite"
+    aria-atomic="true"
+></p>
+
+        </section>
+
+
+        <!-- ======================================== -->
+        <!-- LOCALISATION -->
+        <!-- ======================================== -->
+
+        <section
+            class="contact-localisation"
+            aria-labelledby="titre-localisation"
+        >
+
+            <!-- Titre invisible permettant de conserver
+                une structure accessible pour la section. -->
+            <h2
+                id="titre-localisation"
+                class="sr-only"
+            >
+                Localisation de ProSpace Solutions
+            </h2>
+
+
+            <!-- Icône indiquant la localisation du siège social. -->
+            <div class="contact-localisation__icone">
+                <img
+                    src="assets/icons/point.svg"
+                    alt=""
+                    aria-hidden="true"
+                >
+            </div>
+
+
+            <!-- Adresse du siège social. -->
+            <p class="contact-localisation__adresse">
+                <strong>
+                    14 Avenue de Wagram, 75008 Paris
+                </strong>
+            </p>
+
+
+            <!-- Informations complémentaires d'accès. -->
+            <p class="contact-localisation__details">
+                Siège social · Ligne 2 &amp; 6 Wagram · RER C Invalides
+            </p>
+
+
+            <!-- Lien permettant d'ouvrir l'adresse dans Google Maps. -->
+            <a
+                class="contact-localisation__lien"
+                href="https://www.google.com/maps/search/?api=1&query=14+Avenue+de+Wagram+75008+Paris"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="assets/icons/map.svg"
+                    alt=""
+                    aria-hidden="true"
+                >
+                Voir sur Google Maps
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+
+    <footer class="site-footer">
+
+        <div class="site-footer__contenu">
+
+            <div class="site-footer__presentation">
+
+                <a
+                    class="site-footer__logo"
+                    href="index.html"
+                    aria-label="ProSpace Solutions - Accueil"
+                >
+                    <img
+                        src="assets/logo/logoprospace.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                    <span>
+                        ProSpace <strong>Solutions</strong>
+                    </span>
+                </a>
+
+                <p class="site-footer__description">
+                    Location d'espaces professionnels en France
+                    pour les entreprises et indépendants exigeants.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="site-footer__contact"
+                >
+                    <img
+                        src="assets/icons/email.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                    Nous contacter
+                </a>
+
+            </div>
+
+
+            <nav
+                class="site-footer__colonne"
+                aria-label="Destinations"
+            >
+
+                <h2 class="site-footer__titre">
+                    Destinations
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li><a href="index.html?ville=Paris">Espaces à Paris</a></li>
+                    <li><a href="index.html?ville=Lyon">Espaces à Lyon</a></li>
+                    <li><a href="index.html?ville=Bordeaux">Espaces à Bordeaux</a></li>
+                    <li><a href="index.html?ville=Nantes">Espaces à Nantes</a></li>
+                    <li><a href="index.html?ville=Marseille">Espaces à Marseille</a></li>
+                    <li><a href="index.html?ville=Toulouse">Espaces à Toulouse</a></li>
+                    <li><a href="index.html?ville=Lille">Espaces à Lille</a></li>
+                </ul>
+
+            </nav>
+
+
+            <nav
+                class="site-footer__colonne"
+                aria-label="Services"
+            >
+
+                <h2 class="site-footer__titre">
+                    Services
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li><a href="index.html">Salles de réunion</a></li>
+                    <li><a href="index.html">Espaces de coworking</a></li>
+                    <li><a href="index.html">Salles de formation</a></li>
+                    <li><a href="index.html">Bureaux privatifs</a></li>
+                    <li><a href="index.html">Studios visio</a></li>
+                    <li><a href="index.html">Espaces événementiels</a></li>
+                </ul>
+
+            </nav>
+
+
+            <nav
+                class="site-footer__colonne"
+                aria-label="Informations légales"
+            >
+
+                <h2 class="site-footer__titre">
+                    Légal &amp; accès
+                </h2>
+
+                <ul class="site-footer__liens">
+                    <li><a href="informations.html">Mentions légales</a></li>
+                    <li><a href="informations.html">CGU &amp; CGV</a></li>
+                    <li><a href="informations.html">Politique de confidentialité</a></li>
+                    <li><a href="informations.html">Gestion des cookies</a></li>
+                    <li><a href="informations.html">Déclaration d'accessibilité</a></li>
+                    <li><a href="informations.html">Sitemap</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+        <div class="site-footer__bas">
+
+            <div class="site-footer__bas-contenu">
+
+                <p>
+                    © 2025 ProSpace Solutions SAS — Tous droits réservés
+                </p>
+
+                <p>
+                    Conformité RGAA 4.1 · Accessibilité :
+                    <a href="informations.html">partiellement conforme</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Compteur Mes Espaces partagé entre toutes les pages. -->
+    <script src="assets/js/favoris.js" defer></script>
+
+    <!-- Validation et préremplissage du formulaire. -->
+    <script src="assets/js/contact.js" defer></script>
+
+</body>
+
+</html>

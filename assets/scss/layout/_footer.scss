@@ -1,0 +1,156 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+// ========================================
+// PIED DE PAGE COMMUN
+// ========================================
+
+.site-footer {
+    margin-top: $espacement-grand;
+    background-color: $couleur-principale;
+    color: $couleur-blanc;
+
+
+    // Conteneur principal du footer.
+    &__contenu {
+        @include conteneur;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $espacement-grand;
+
+        padding-block: 2.5rem;
+
+        // Deux colonnes sur tablette.
+        @include tablette {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+         // Quatre colonnes sur ordinateur.
+        @media (min-width: 900px) {
+            grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+            column-gap: 3rem;
+        }
+    }
+
+
+    // Bloc de présentation de l'entreprise.
+    &__presentation {
+        max-width: 250px;
+    }
+
+
+    // Logo et nom de l'entreprise.
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: $espacement-petit;
+
+        margin-bottom: $espacement-moyen;
+
+        font-size: 0.75rem;
+        font-weight: 600;
+
+        img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        // Mise en avant de "Solutions".
+        strong {
+            color: $couleur-accent;
+        }
+    }
+
+
+    // Courte présentation de ProSpace Solutions.
+    &__description {
+        margin-bottom: $espacement-moyen;
+
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.7rem;
+        line-height: 1.6;
+    }
+
+    // Lien vers la page de contact.
+    &__contact {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        color: $couleur-accent;
+        font-size: 0.7rem;
+
+        // Petite enveloppe décorative devant le lien.
+        img {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+
+    // Titres des colonnes du footer.
+    &__titre {
+        margin-bottom: $espacement-moyen;
+
+        color: $couleur-blanc;
+        font-size: 0.65rem;
+        font-weight: 700;
+
+        text-transform: uppercase;
+        letter-spacing: 0.12rem;
+    }
+
+
+    // Listes de liens.
+    &__liens {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+
+        a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.68rem;
+
+            &:hover {
+                color: $couleur-accent;
+            }
+        }
+    }
+
+
+    // Partie inférieure séparée par une bordure.
+    &__bas {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    // Copyright et information d'accessibilité.
+    &__bas-contenu {
+        @include conteneur;
+
+        display: flex;
+        flex-direction: column;
+        gap: $espacement-petit;
+
+        padding-block: 1.25rem;
+
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.65rem;
+
+        // Placement sur une seule ligne à partir de la tablette.
+        @include tablette {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}

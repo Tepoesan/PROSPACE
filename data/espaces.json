@@ -1,0 +1,165 @@
+[
+    {
+        "id": 1,
+        "nom": "Espace Wagram Opéra",
+        "ville": "Paris",
+        "quartier": "Paris 8e",
+        "adresse": "14 Avenue de Wagram, 75008 Paris",
+        "capacite": 12,
+        "note": 4.8,
+        "nombreAvis": 34,
+        "description": "Au cœur du 8e arrondissement, à deux pas de l'Arc de Triomphe, l'Espace Wagram Opéra offre un cadre premium pour vos réunions stratégiques et présentations clients. La salle est équipée d'un mobilier haut de gamme, d'une acoustique soignée et d'une lumière naturelle généreuse grâce à ses larges baies vitrées. Idéal pour les comités de direction, les sessions de négociation et les workshops en petit groupe.",
+        "configuration": "Configuration modulable : théâtre, classe, U, boardroom sur demande.",
+        "equipements": [
+            "WiFi Fibre 1 Gb/s",
+            "Visioconférence intégrée",
+            "Accès PMR complet",
+            "Café & eau inclus",
+            "Écran 4K 86 pouces",
+            "Tableau blanc interactif",
+            "Climatisation réversible",
+            "Parking sécurisé"
+        ],
+        "tarifs": {
+            "heure": 45,
+            "demiJournee": 160,
+            "journee": 280
+        },
+        "images": [
+            "assets/images/espace-wagram-opera-paris-01.png",
+            "assets/images/espace-wagram-opera-paris-02.png",
+            "assets/images/espace-wagram-opera-paris-03.png"
+        ]
+    },
+    {
+        "id": 2,
+        "nom": "Atelier République",
+        "ville": "Paris",
+        "quartier": "Paris 11e",
+        "adresse": "Paris 11e",
+        "capacite": 8,
+        "note": 4.6,
+        "nombreAvis": 51,
+        "description": "Un espace de travail convivial situé dans le 11e arrondissement de Paris, adapté aux réunions d'équipe, aux rendez-vous professionnels et aux sessions de travail en petit groupe.",
+        "configuration": "Configuration modulable selon les besoins de l'équipe.",
+        "equipements": [
+            "WiFi Fibre",
+            "Écran 4K"
+        ],
+        "tarifs": {
+            "heure": 35,
+            "demiJournee": 125,
+            "journee": 220
+        },
+        "images": [
+            "assets/images/atelier-republique-paris-01.png",
+            "assets/images/atelier-republique-paris-02.png",
+            "assets/images/atelier-republique-paris-03.png"
+        ]
+    },
+    {
+        "id": 3,
+        "nom": "Confluence Executive Suite",
+        "ville": "Lyon",
+        "quartier": "Lyon 2e",
+        "adresse": "Lyon 2e",
+        "capacite": 20,
+        "note": 4.9,
+        "nombreAvis": 22,
+        "description": "Un espace professionnel premium à Lyon conçu pour accueillir des réunions, présentations et événements d'entreprise dans un environnement confortable et moderne.",
+        "configuration": "Configuration modulable pour les réunions et présentations professionnelles.",
+        "equipements": [
+            "WiFi Fibre",
+            "Accès PMR",
+            "Écran 4K"
+        ],
+        "tarifs": {
+            "heure": 55,
+            "demiJournee": 200,
+            "journee": 350
+        },
+        "images": [
+            "assets/images/confluence-executive-suite-lyon-01.png",
+            "assets/images/confluence-executive-suite-lyon-02.png",
+            "assets/images/confluence-executive-suite-lyon-03.png"
+        ]
+    },
+    {
+        "id": 4,
+        "nom": "Les Chartrons Board Room",
+        "ville": "Bordeaux",
+        "quartier": "Bordeaux",
+        "adresse": "Bordeaux",
+        "capacite": 16,
+        "note": 4.7,
+        "nombreAvis": 18,
+        "description": "Une salle de réunion professionnelle située à Bordeaux, pensée pour les échanges d'équipe, les rendez-vous clients et les réunions de direction.",
+        "configuration": "Configuration adaptée aux réunions de groupe et aux présentations.",
+        "equipements": [
+            "WiFi Fibre",
+            "Accès PMR"
+        ],
+        "tarifs": {
+            "heure": 40,
+            "demiJournee": 145,
+            "journee": 250
+        },
+        "images": [
+            "assets/images/les-chartrons-board-room-bordeaux-01.png",
+            "assets/images/les-chartrons-board-room-bordeaux-02.png",
+            "assets/images/les-chartrons-board-room-bordeaux-03.png"
+        ]
+    },
+    {
+        "id": 5,
+        "nom": "Île de Nantes Studio",
+        "ville": "Nantes",
+        "quartier": "Nantes",
+        "adresse": "Nantes",
+        "capacite": 6,
+        "note": 4.5,
+        "nombreAvis": 63,
+        "description": "Un studio professionnel à taille humaine, adapté aux petites équipes, aux rendez-vous professionnels et aux sessions de travail collaboratif.",
+        "configuration": "Configuration flexible pour les petits groupes.",
+        "equipements": [
+            "WiFi Fibre",
+            "Écran 4K"
+        ],
+        "tarifs": {
+            "heure": 28,
+            "demiJournee": 100,
+            "journee": 180
+        },
+        "images": [
+            "assets/images/ile-de-nantes-studio-nantes-01.png",
+            "assets/images/ile-de-nantes-studio-nantes-02.png",
+            "assets/images/ile-de-nantes-studio-nantes-03.png"
+        ]
+    },
+    {
+        "id": 6,
+        "nom": "Vieux-Port Panorama",
+        "ville": "Marseille",
+        "quartier": "Marseille",
+        "adresse": "Marseille",
+        "capacite": 14,
+        "note": 4.4,
+        "nombreAvis": 29,
+        "description": "Un espace professionnel à Marseille destiné aux réunions, présentations et rencontres d'entreprise dans un environnement confortable.",
+        "configuration": "Configuration modulable en fonction du format de la réunion.",
+        "equipements": [
+            "WiFi Fibre",
+            "Accès PMR"
+        ],
+        "tarifs": {
+            "heure": 38,
+            "demiJournee": 140,
+            "journee": 240
+        },
+        "images": [
+            "assets/images/vieux-port-panorama-marseille-01.png",
+            "assets/images/vieux-port-panorama-marseille-02.png",
+            "assets/images/vieux-port-panorama-marseille-03.png"
+        ]
+    }
+]
