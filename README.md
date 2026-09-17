@@ -159,7 +159,7 @@ d'accessibilité et de SEO.
 |---|---:|---:|---:|---:|
 | Accueil | 95 | 96 | 100 | 100 |
 | Fiche espace | 75 | 96 | 100 | 100 |
-| Mes espaces | 98 | 96 | 100 | 100 |
+| Mes espaces | 100 | 96 | 100 | 100 |
 | Contact | 100 | 94 | 100 | 100 |
 
 ### Accueil
