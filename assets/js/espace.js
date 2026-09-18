@@ -155,7 +155,7 @@ function afficherEspace(espace) {
             <li>
                 <img
                     src="assets/icons/check.svg"
-                    alt=""
+                    alt="icon check"
                     aria-hidden="true"
                 >
                 <span>${equipement}</span>

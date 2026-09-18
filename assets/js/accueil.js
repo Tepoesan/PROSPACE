@@ -2,7 +2,7 @@
 // PAGE D'ACCUEIL
 // ========================================
 
-// Rôle : récupérer les espaces depuis le fichier JSON,
+// Rôle : récupérer/charger les espaces depuis le fichier JSON,
 // les afficher sous forme de cartes et gérer les filtres de recherche.
 
 
@@ -15,9 +15,7 @@ const nombreResultats = document.querySelector("#nombre-resultats");
 
 const filtreVille = document.querySelector("#filtre-ville");
 const filtreCapacite = document.querySelector("#filtre-capacite");
-const filtresEquipements = document.querySelectorAll(
-    'input[name="equipement"]'
-);
+const filtresEquipements = document.querySelectorAll('input[name="equipement"]');
 
 
 // Tableau contenant les espaces récupérés depuis le fichier JSON.
@@ -109,7 +107,7 @@ const equipements = espace.equipements
             <li>
                 <img
                     src="${icone}"
-                    alt=""
+                    alt="icon"
                     aria-hidden="true"
                 >
                 ${libelle}
@@ -154,7 +152,7 @@ const equipements = espace.equipements
                 >
                     <img
                         src="${iconeFavori}"
-                        alt=""
+                        alt="icon favoris"
                         aria-hidden="true"
                     >
                 </button>
@@ -175,7 +173,7 @@ const equipements = espace.equipements
                         <p class="carte-espace__localisation">
                             <img
                                 src="assets/icons/point.svg"
-                                alt=""
+                                alt="icon point"
                                 aria-hidden="true"
                             >
                             ${espace.quartier}
@@ -194,11 +192,11 @@ const equipements = espace.equipements
                             class="carte-espace__etoiles"
                             aria-hidden="true"
                         >
-                            <img src="assets/icons/etoilepleine.svg" alt="">
-                            <img src="assets/icons/etoilepleine.svg" alt="">
-                            <img src="assets/icons/etoilepleine.svg" alt="">
-                            <img src="assets/icons/etoilepleine.svg" alt="">
-                            <img src="assets/icons/etoilepleine.svg" alt="">
+                            <img src="assets/icons/etoilepleine.svg" alt="icon etoile">
+                            <img src="assets/icons/etoilepleine.svg" alt="icon etoile">
+                            <img src="assets/icons/etoilepleine.svg" alt="icon etoile">
+                            <img src="assets/icons/etoilepleine.svg" alt="icon etoile">
+                            <img src="assets/icons/etoilepleine.svg" alt="icon etoile">
                         </span>
 
                         <strong>${espace.note}</strong>
@@ -216,7 +214,7 @@ const equipements = espace.equipements
                     <p class="carte-espace__capacite">
                         <img
                             src="assets/icons/duo.svg"
-                            alt=""
+                            alt="icon duo"
                             aria-hidden="true"
                         >
                         ${espace.capacite} pers.

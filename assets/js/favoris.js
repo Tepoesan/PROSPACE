@@ -202,7 +202,7 @@ function mettreAJourBoutonFavori(espaceId, nomEspace) {
     boutonFavori.innerHTML = `
         <img
             src="${iconeFavori}"
-            alt=""
+            alt="icon favoris"
             aria-hidden="true"
         >
         <span>${texteFavori}</span>

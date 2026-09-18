@@ -89,7 +89,7 @@ function creerCarteFavori(espace) {
                 <p class="favori__localisation">
                     <img
                         src="assets/icons/point.svg"
-                        alt=""
+                        alt="icon point"
                         aria-hidden="true"
                     >
                     ${espace.quartier}
@@ -101,7 +101,7 @@ function creerCarteFavori(espace) {
                     <span class="favori__capacite">
                         <img
                             src="assets/icons/duo.svg"
-                            alt=""
+                            alt="icon duo"
                             aria-hidden="true"
                         >
                         ${espace.capacite} pers.
@@ -145,7 +145,7 @@ function creerCarteFavori(espace) {
                 >
                     <img
                         src="assets/icons/poubellegrise.svg"
-                        alt=""
+                        alt="icon poubelle grise"
                         aria-hidden="true"
                     >
                     Retirer

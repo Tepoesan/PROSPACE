@@ -273,35 +273,64 @@ function validerConsentement() {
 
 
 // ========================================
-// PRÉREMPLISSAGE DEPUIS UNE FICHE
+// CHARGEMENT DES ESPACES
 // ========================================
 
-// Rôle : récupérer ?espace=... dans l'URL et afficher
-// automatiquement l'espace concerné dans le formulaire.
+// Rôle : charger les espaces depuis le fichier JSON,
+// remplir la liste et présélectionner l'espace reçu dans l'URL.
 // Paramètres : aucun.
 // Retour : aucun.
-function preremplirEspace() {
+async function chargerEspaces() {
 
-    const parametres =
-        new URLSearchParams(window.location.search);
+    try {
 
-    const espace =
-        parametres.get("espace");
+        const reponse =
+            await fetch("data/espaces.json");
+
+        if (!reponse.ok) {
+            throw new Error("Impossible de charger les espaces.");
+        }
+
+        const espaces =
+            await reponse.json();
+
+        espaces.forEach((espace) => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = espace.nom;
+            option.textContent = espace.nom;
+
+            champEspace.appendChild(option);
+        });
 
 
-    // Accès direct à contact.html : aucun espace à afficher.
-    if (!espace) {
-        return;
+        // Récupérer l'espace éventuellement transmis
+        // depuis une fiche espace.
+        const parametres =
+            new URLSearchParams(window.location.search);
+
+        const espaceSelectionne =
+            parametres.get("espace");
+
+
+        if (espaceSelectionne) {
+
+            champEspace.value =
+                espaceSelectionne;
+
+            champSujet.value =
+                "reservation";
+        }
+
+    } catch (erreur) {
+
+        console.error(
+            "Erreur lors du chargement des espaces :",
+            erreur
+        );
     }
-
-
-    blocEspace.hidden = false;
-
-    champEspace.value = espace;
-
-
-    // Préselectionner le sujet correspondant.
-    champSujet.value = "reservation";
 }
 
 
@@ -426,7 +455,7 @@ formulaireContact.addEventListener(
 // INITIALISATION
 // ========================================
 
-preremplirEspace();
+chargerEspaces();
 
 // ========================================
 // CARROUSEL DE L'ÉQUIPE
